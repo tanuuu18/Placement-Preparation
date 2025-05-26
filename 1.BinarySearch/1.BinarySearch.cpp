@@ -49,6 +49,7 @@ int search(vector<int>& nums, int target) {
     return -1;
 }
 
+//main code
 int main(){
     int n,target;
     cout<<"Enter the no. of elements in array: "<<endl;
