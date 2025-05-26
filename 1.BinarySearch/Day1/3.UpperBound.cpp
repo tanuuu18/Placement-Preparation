@@ -4,7 +4,7 @@ using namespace std;
 
  /*
  Problem statement: 
- Given a sorted array of N integers and an integer x, write a program to find the lower bound of x.
+ Given a sorted array of N integers and an integer x, write a program to find the upper bound of x.
  */
 
 // ################ Brute Force Approach ##################
@@ -16,14 +16,15 @@ using namespace std;
 
 // ################### Optimal Approach (Binary Search) #############
 
-int lowerBound(vector<int>& arr, int target) {
+int upperBound(vector<int>& arr, int target) {
+    // code here
     int n = arr.size();
     int low = 0;
     int high = n-1;
     int ans = n;
     while(low<=high){
         int mid = low + (high-low)/2;
-        if(arr[mid]>=target){
+        if(arr[mid]>target){
             ans = mid;
             high = mid-1;
         }
@@ -46,5 +47,5 @@ int main(){
     }
     cout<<"Enter the target to find lower bound:"<<endl;
     cin>>target;
-    cout<<lowerBound(nums,target)<<endl;
+    cout<<upperBound(nums,target)<<endl;
 }

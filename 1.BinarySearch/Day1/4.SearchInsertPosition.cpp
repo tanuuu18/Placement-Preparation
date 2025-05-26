@@ -3,8 +3,8 @@ using namespace std;
 
 
  /*
- Problem statement: 
- Given a sorted array of N integers and an integer x, write a program to find the lower bound of x.
+Problem statement: 
+You are given a sorted array arr of distinct values and a target value x. You need to search for the index of the target value in the array.
  */
 
 // ################ Brute Force Approach ##################
@@ -16,14 +16,14 @@ using namespace std;
 
 // ################### Optimal Approach (Binary Search) #############
 
-int lowerBound(vector<int>& arr, int target) {
-    int n = arr.size();
+int searchInsert(vector<int>& nums, int target) {
+    int n = nums.size();
     int low = 0;
     int high = n-1;
     int ans = n;
     while(low<=high){
         int mid = low + (high-low)/2;
-        if(arr[mid]>=target){
+        if(nums[mid]>=target){
             ans = mid;
             high = mid-1;
         }
@@ -46,5 +46,5 @@ int main(){
     }
     cout<<"Enter the target to find lower bound:"<<endl;
     cin>>target;
-    cout<<lowerBound(nums,target)<<endl;
+    cout<<searchInsert(nums,target)<<endl;
 }

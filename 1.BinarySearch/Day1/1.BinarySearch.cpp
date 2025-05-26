@@ -1,6 +1,13 @@
 #include<iostream>
 using namespace std;
 
+ /*
+ Problem statement: 
+ You are given a sorted array of integers and a target, your task is to search for the target in the given array. Assume the given array does not contain any duplicate numbers.
+ */
+
+
+
 // ################# Recursive Implementation ###################
 
 int binarySearch(vector<int>& nums,int low, int high, int target){
